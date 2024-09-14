@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Web Page</title>
+    <style>
+        body {
+            font-family: serif;
+            font-size: 25px;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        input {
+            width: 300px;
+            height: 30px;
+            font-size: 16px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 80px;
+            height: 40px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+        }
+        .itemList{
+            background-color: rgba(227, 247, 250, 0.888);
+            width: 50%;
+            margin:auto;
+        }
+        .add-btn {
+            background-color: blue;
+            color: white;
+        }
+        .delete-btn {
+            background-color: olive;
+            color: white;
+        }
+        ul {
+            text-align: left;
+            margin-top: 20px;
+        }
+        @media (max-width: 1200px) {
+            body {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.5em; 
+            }
+            input {
+                width: 200px; 
+                height: 25px;
+                font-size: 14px;
+            }
+            button {
+                width: 70px;
+                height: 35px;
+                font-size: 14px;
+            }
+            ul {
+                margin-top: 15px;
+                font-size: 14px;
+            }
+            .itemList{
+                width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Dynamic Web Page</h1>
+
+    <!-- 입력 필드 및 버튼 -->
+    <input type="text" id="itemInput" placeholder="Enter items">
+    <button class="add-btn" onclick="addItems()">추가</button>
+    <button class="delete-btn" onclick="deleteAll()">삭제</button>
+
+    <!-- 목록이 표시될 부분 -->
+    <ul class="itemList" id="itemList"></ul>
+
+    <script>
+        // 목록에 항목 추가
+        function addItems() {
+            input = document.getElementById('itemInput').value;
+            list = document.getElementById('itemList');
+
+            if (input.trim() === "") {
+                alert("항목을 입력해주세요!");
+                return;
+            }
+            items = input.split(','); // 콤마로 구분하여 항목 분리
+
+            items.forEach(function(item) {
+                li = document.createElement('li'); // li 요소 생성
+                li.textContent = item.trim(); // 공백 제거 후 텍스트 설정
+                list.appendChild(li); // 목록에 추가
+            });
+
+            document.getElementById('itemInput').value = ""; // 입력 필드 초기화
+        }
+
+        // 목록을 모두 삭제하는 함수
+        function deleteAll() {
+            list = document.getElementById('itemList'); // 목록 요소 가져오기
+            list.innerHTML = ""; // 목록 비우기
+        }
+    </script>
+
+</body>
+</html>

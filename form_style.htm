@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join</title>
+
+    <!--CSS-->
+    <style>
+        table{
+            width : auto;
+            height : auto;
+            margin : auto;
+        }
+        a{
+            color: darkgray;
+        }
+        .text {
+            width: 250px;
+            height: 32px;
+            font-size: 15px;
+            border: 0;
+            border-radius: 15px;
+            outline: none;
+            padding-left: 10px;
+            background-color: rgb(233,233,233);
+        }
+        select {
+            width: auto;
+            height: 32px;
+            font-size: 15px;
+            border: 1;
+            border-color: lightgray;
+            border-radius: 15px;
+            outline: none;
+            padding-left: 10px;
+        }
+        .btn {
+            width: 262px;
+            height: 32px;
+            font-size: 15px;
+            border: 0;
+            border-radius: 15px;
+            outline: none;
+            padding-left: 10px;
+            background-color: rgb(164, 199, 255);
+        }
+        .btn:active {
+            width: 262px;
+            height: 32px;
+            font-size: 15px;
+            border: 0;
+            border-radius: 15px;
+            outline: none;
+            padding-left: 10px;
+            background-color: rgb(61, 135, 255);
+        }
+        .email{
+            width: 127px;
+            height: 32px;
+            font-size: 15px;
+            border: 0;
+            border-color: lightgray;
+            border-radius: 15px;
+            padding-left: 10px;
+            background-color: rgb(233,233,233);  
+            }
+        a {
+            font-size: 12px;
+            color: darkgray;
+            text-decoration-line: none;
+           
+            }
+        .join {
+            text-align: center;
+         }
+
+
+
+    </style>
+
+</head>
+<body>
+    <form action="login_style.htm">
+        <table>
+            <tr>
+                <td><h2>회원가입</h2></td>
+            </tr>
+            <!--회원가입 시 아이디 입력받기-->
+            <tr><td>아이디</td></tr>
+            <tr>
+                <td>
+                    <input type="text" placeholder="ID" class="text">
+                </td>
+            </tr>
+
+            <!--회원가입 시 비밀번호 입력받기-->
+            <tr><td>비밀번호</td></tr>
+            <tr>
+                <td>
+                    <input type="password" placeholder="Password" class="text">
+                </td>
+            </tr>
+            <!--비밀번호 확인받기-->
+            <tr><td>비밀번호 확인</td></tr>
+            <tr>
+                <td>
+                    <input type="password" placeholder="Password Check" class="text">
+                </td>
+            </tr>
+            <!--이름 입력받기-->
+            <tr><td>이름</td></tr>
+            <tr>
+                <td>
+                    <input type="text" placeholder="이름" class="text">
+                </td>
+            </tr>
+
+            <!--소속 입력받기-->
+            <tr><td>소속</td></tr>
+            <tr>
+                <td>
+                    <select>
+                        <optgroup label="한동대(학부생)">
+                            <option>전산전자공학부</option>
+                            <option>기계제어공학부</option>
+                            <option>콘텐츠융합디자인학부</option>
+                        </optgroup>
+                        <optgroup label="한동대(대학원생)">
+                            <option>전산전자공학부</option>
+                            <option>기계제어공학부</option>
+                            <option>콘텐츠융합디자인학부</option>
+                        </optgroup>
+                        <optgroup label="한동대(교수)">
+                            <option>전산전자공학부</option>
+                            <option>기계제어공학부</option>
+                            <option>콘텐츠융합디자인학부</option>
+                        </optgroup>
+                    </select>
+
+                </td>
+            </tr>
+    
+
+            <!--생일 입력받기-->
+            <tr><td>생년월일</td></tr>
+            <tr>
+                <td>
+                    <input type="date"  class="text">
+                </td>
+            </tr>
+            <!--성별 입력받기-->
+            <tr><td>성별</td></tr>
+            <tr>
+                <td>
+                    <input type="radio" name="gender" value="man" > 남
+                    <input type="radio" name="gender" value="woman" > 여
+
+                </td>
+            </tr>
+            <!--이메일 입력받기-->
+            <tr><td>이메일</td></tr>
+            <tr>
+                <td> 
+                    <input type="text" class="email"> @
+                    <select>
+                        <option>naver.com</option>
+                        <option>gmail.com</option>
+                        <option>daum.net</option>
+                        <option>nate.com</option>
+                        <option> 직접입력</option>
+                    </select>
+                </td>
+            </tr>
+            <!--비밀번호 찾기 힌트-->
+            <tr><td>[비밀번호 힌트 설정] 좋아하는 색상은? </td></tr>
+            
+            <tr>
+                <td>
+                    <input type="color" class="hint">
+                   </td>
+            </tr>
+        
+            <!--개인정보동의여부-->
+            <tr>
+                <td>
+                    <input type="checkbox" class="agree">
+                    <a href="https://www.privacy.go.kr/front/contents/cntntsView.do?contsNo=34">개인 정보 수집 및 이용 동의</a>
+                </td>
+            </tr>
+            <!--회원가입 버튼-->
+            <tr>
+                <td>
+                    <input type="submit" value="가입하기" class="btn" onclick="alert('회원가입 되었습니다. 환영합니다 :D')">
+                </td>
+            </tr>
+            <!-- 버튼-->
+            <tr>
+                <td class="join"><a href="login_style.htm">로그인</a></td>
+            </tr>
+           
+        </table>
+      
+
+    </form>
+
+
+</body>
+</html>

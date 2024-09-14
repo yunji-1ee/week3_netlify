@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join</title>
+
+    <!--CSS-->
+    <style>
+        table{
+            width : auto;
+            height : auto;
+            margin : auto;
+        }
+        a{
+            color: darkgray;
+        }
+        .text {
+            width: 250px;
+            height: 32px;
+            font-size: 15px;
+            border: 0;
+            border-radius: 15px;
+            outline: none;
+            padding-left: 10px;
+            background-color: rgb(233,233,233);
+        }
+        select {
+            width: auto;
+            height: 32px;
+            font-size: 15px;
+            border: 1;
+            border-color: lightgray;
+            border-radius: 15px;
+            outline: none;
+            padding-left: 10px;
+        }
+        .btn {
+            width: 262px;
+            height: 32px;
+            font-size: 15px;
+            border: 0;
+            border-radius: 15px;
+            outline: none;
+            padding-left: 10px;
+            background-color: rgb(164, 199, 255);
+        }
+        .btn:active {
+            width: 262px;
+            height: 32px;
+            font-size: 15px;
+            border: 0;
+            border-radius: 15px;
+            outline: none;
+            padding-left: 10px;
+            background-color: rgb(61, 135, 255);
+        }
+        .email{
+            width: 127px;
+            height: 32px;
+            font-size: 15px;
+            border: 0;
+            border-color: lightgray;
+            border-radius: 15px;
+            padding-left: 10px;
+            background-color: rgb(233,233,233);  
+            }
+        a {
+            font-size: 12px;
+            color: darkgray;
+            text-decoration-line: none;
+           
+            }
+
+        a1 {
+            font-size: 12px;
+            color: red;
+            }
+         a2 {
+            font-size: 12px;
+            color: blue;
+            }
+        .join {
+            text-align: center;
+         }
+
+
+
+    </style>
+
+</head>
+<body>
+        <table>
+            <tr>
+                <td><h2>회원가입</h2></td>
+            </tr>
+            <tr><td><br><a1>*은 [필수] 기입 항목입니다.</ㅁ><br><br></td></tr>
+
+            <!--회원가입 시 아이디 입력받기-->
+            <tr><td>아이디 *</td></tr>
+            <tr>
+                <td>
+                    <input type="text" placeholder="ID" class="text" id="userId">
+                </td>
+            </tr>
+
+            <!--회원가입 시 비밀번호 입력받기-->
+            <tr><td>비밀번호 *</td></tr>
+            <tr>
+                <td>
+                    <input type="password" placeholder="Password" class="text" id="userPassword">
+                </td>
+            </tr>
+            <!--비밀번호 확인받기-->
+            <tr><td>비밀번호 확인 *</td></tr>
+            <tr>
+                <td>
+                    <input type="password" placeholder="Password Check" class="text" id="passwordCheck">
+                </td>
+            </tr>
+            <!--이름 입력받기-->
+            <tr><td>이름 *</td></tr>
+            <tr>
+                <td>
+                    <input type="text" placeholder="이름" class="text" id="name">
+                </td>
+            </tr>
+
+            <!--학번 입력받기-->
+            <tr><td>학번 *</td></tr>
+            <tr>
+                <td>
+                    <input type="text" placeholder="학번" class="text" id="studentId">
+                </td>
+            </tr>
+
+            <!--소속 입력받기-->
+            <tr><td>소속 *</td></tr>
+            <tr>
+                <td>
+                    <select id="group">
+                            <option>----</option>
+                        <optgroup label="한동대(학부생)">
+                            <option>전산전자공학부</option>
+                            <option>기계제어공학부</option>
+                            <option>콘텐츠융합디자인학부</option>
+                        </optgroup>
+                        <optgroup label="한동대(대학원생)">
+                            <option>전산전자공학부</option>
+                            <option>기계제어공학부</option>
+                            <option>콘텐츠융합디자인학부</option>
+                        </optgroup>
+                        <optgroup label="한동대(교수)">
+                            <option>전산전자공학부</option>
+                            <option>기계제어공학부</option>
+                            <option>콘텐츠융합디자인학부</option>
+                        </optgroup>
+                    </select>
+
+                </td>
+            </tr>
+            <tr><td><br><a2>여기서부터는 [선택] 항목입니다.</a2><br><br></td></tr>
+
+            <!--생일 입력받기-->
+            <tr><td>생년월일</td></tr>
+            <tr>
+                <td>
+                    <input type="date"  class="text" id="date">
+                </td>
+            </tr>
+            <!--성별 입력받기-->
+            <tr><td>성별</td></tr>
+            <tr>
+                <td>
+                    <input type="radio" name="gender" value="man" id="man" > 남
+                    <input type="radio" name="gender" value="woman" id="woman"> 여
+
+                </td>
+            </tr>
+            <!--이메일 입력받기-->
+            <tr><td>이메일</td></tr>
+            <tr>
+                <td> 
+                    <input type="text" class="email" id="email"> @
+                    <select>
+                        <option>naver.com</option>
+                        <option>gmail.com</option>
+                        <option>daum.net</option>
+                        <option>nate.com</option>
+                        <option> 직접입력</option>
+                    </select>
+                </td>
+            </tr>
+            <!--비밀번호 찾기 힌트-->
+            <tr><td>[비밀번호 힌트 설정] 좋아하는 색상은? </td></tr>
+            
+            <tr>
+                <td>
+                    <input type="color" class="hint" id="color">
+                   </td>
+            </tr>
+        
+            <!--개인정보동의여부-->
+            <tr>
+                <td>
+                    <input type="checkbox" class="agree" id="agree">
+                    <a href="https://www.privacy.go.kr/front/contents/cntntsView.do?contsNo=34">개인 정보 수집 및 이용 동의</a>
+                </td>
+            </tr>
+            <!--회원가입 버튼-->
+            <tr>
+                <td>
+                    <input type="submit" value="가입하기" class="btn" onclick="validateJoin()">
+                </td>
+            </tr>
+            <!-- 버튼-->
+            <tr>
+                <td class="join"><a href="login.htm">로그인</a></td>
+            </tr>
+           
+        </table>
+      
+        <script>
+            function validateJoin(){
+                id = document.getElementById("userId").value;
+                pwd = document.getElementById("userPassword").value;
+                pwd_check = document.getElementById("passwordCheck").value;
+                name = document.getElementById("name").value;
+                studentId = document.getElementById("studentId").value;
+                group = document.getElementById("group").value;
+                agree = document.getElementById("agree").checked;
+                
+                if(id === ""){
+                    alert("ID를 입력해주세요.");
+                    return false;
+                }
+                else if(pwd === ""){
+                    alert("비밀번호를 입력해주세요.");
+                    return false;
+                }
+                else if(pwd != pwd_check){
+                    alert(" [비밀번호]와 [비밀번호 확인]이 서로 다릅니다. 다시 한 번 확인해주세요!");
+                    return false;
+                }
+                else if(name === ""){
+                    alert("이름을 입력해주세요.");
+                    return false;
+                }
+                else if(studentId === ""){
+                    alert("학번을 입력해주세요.");
+                    return false;
+                }
+                else if(group === "----"){
+                    alert("소속을 선택하세요.");
+                    return false;
+                }
+                else if(!agree){
+                    alert("[진짜 마지막 !!] 개인 정보 수집 및 이용에 동의해주세요! 회색 글씨를 누르면 이용약관 페이지로 이동합니다.");
+                    return false;
+                }
+                else{
+                    alert("성공적으로 회원가입이 완료되었습니다 :D 환영해요!!");
+                    window.location.href = "login.htm";
+                    return true;
+                    
+                }
+            }
+        </script>
+
+
+</body>
+</html>
