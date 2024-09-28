@@ -7,157 +7,152 @@
     <link rel="stylesheet" type="text/css" href="my.css"> <!-- CSS 파일 분리 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet"></head>
-
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
+</head>
 <body>
 
     <div class="container">
-    <form action="index.htm" method="get">
-        <table>
-            <tr>
-                <td><h2>TODO_EDIT</h2></td>
-            </tr>
+        <form action="index.htm" method="get" onsubmit="return validateTask();">
+            <table>
+                <tr>
+                    <td><h2>TODO_EDIT</h2></td>
+                </tr>
 
-            <!--카테고리 선택-->
-            <tr><td class="what">📗 과목</td></tr>
-            <tr>
-                <td>
-                    <select id="subject" class="text">
-                        <option>-----</option>
-                        <optgroup label="[전공]">
-                            <option>🧑🏻‍💻 오픈소스 스튜디오</option>
-                            <option>💻 컴퓨터 구조</option>
-                            <option>🖥️ 컴퓨터 비전</option>
-                            <option>🧑🏻‍💻 웹 서비스 개발</option>
-                            <option>📚 이산수학</option>
-                        </optgroup>
-                        <optgroup label="[교양]">
-                            <option>✝️ 기독교 변증학</option>
-                            <option>♾️ Calculus2</option>
-                        </optgroup>
-                    </select>
-                </td>
-            </tr>
+                <!--카테고리 선택-->
+                <tr><td class="what">📗 과목</td></tr>
+                <tr>
+                    <td>
+                        <select id="subject" class="text">
+                            <option>-----</option>
+                            <optgroup label="[전공]">
+                                <option>🧑🏻‍💻 오픈소스 스튜디오</option>
+                                <option>💻 컴퓨터 구조</option>
+                                <option>🖥️ 컴퓨터 비전</option>
+                                <option>🧑🏻‍💻 웹 서비스 개발</option>
+                                <option>📚 이산수학</option>
+                            </optgroup>
+                            <optgroup label="[교양]">
+                                <option>✝️ 기독교 변증학</option>
+                                <option>♾️ Calculus2</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                </tr>
 
-            <!--교수님 입력받기-->
-            <tr><td class="what">👨🏻‍🏫 교수님 (성함만)</td></tr>
-            <tr>
-                <td>
-                    <input type="text" placeholder="교수님 성함" class="text" id="professor">
-                </td>
-            </tr>
+                <!--교수님 입력받기-->
+                <tr><td class="what">👨🏻‍🏫 교수님 (성함만)</td></tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="교수님 성함" class="text" id="professor">
+                    </td>
+                </tr>
 
-            <tr><td class="what">📚 카테고리</td></tr>
-            <tr>
-                <td>
-                    <input type="radio" class="radio" value="assignment"> 과제
-                    <input type="radio" class="radio" value="study_alone"> 개인공부
-                    <input type="radio" class="radio" value="team"> 팀플
-                    <input type="radio" class="radio" value="study"> 스터디
-                </td>
-            </tr>
+                <tr><td class="what">📚 카테고리</td></tr>
+                <tr>
+                    <td>
+                        <input type="radio" class="radio" name="category" value="assignment"> 과제
+                        <input type="radio" class="radio" name="category" value="study_alone"> 개인공부
+                        <input type="radio" class="radio" name="category" value="team"> 팀플
+                        <input type="radio" class="radio" name="category" value="study"> 스터디
+                    </td>
+                </tr>
 
-        <!--투두 제목-->
-        <tr><td class="what">#️⃣ 제목</td></tr>
-        <tr>
-            <td>
-                <input type="text" placeholder="ex) 5주차 HW 2-2"class="text">
-            </td>
-        </tr>
+                <!--투두 제목-->
+                <tr><td class="what">#️⃣ 제목</td></tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="ex) 5주차 HW 2-2" class="text" id="title">
+                    </td>
+                </tr>
 
-        <tr><td class="what">📝 세부 할일</td></tr>
-        <tr>
-            <td>
-                <textarea class="textarea" id="task" rows="4" cols="50">
+                <tr><td class="what">📝 세부 할일</td></tr>
+                <tr>
+                    <td>
+                        <textarea class="textarea" id="task" rows="4" cols="50"></textarea>
+                    </td>
+                </tr>
+            
+                <!--수행완료(마감일) 입력받기-->
+                <tr><td class="what">🗓️ 마감일</td></tr>
+                <tr>
+                    <td>
+                        <input type="date" class="text" id="dueDate">
+                    </td>
+                </tr>
 
-✅ 
-✅ 
-✅ 
-               </textarea>
-            </td>
-        </tr>
-    
+                <!--수행완료(마감일) 입력받기-->
+                <tr><td class="what">⏱️ 마감시간</td></tr>
+                <tr>
+                    <td>
+                        <input type="time" class="text" id="dueTime">
+                    </td>
+                </tr>
 
+                <!--과제 총점 입력받기 (선택사항)-->
+                <tr><td class="what">🅰️➕ 과제 총점</td></tr>
+                <tr>
+                    <td>
+                        <input type="number" placeholder="총점" class="text" id="totalScore">
+                    </td>
+                </tr>
 
-    
-            <!--수행완료(마감일) 입력받기-->
-            <tr><td class="what">🗓️ 마감일</td></tr>
-            <tr>
-                <td>
-                    <input type="date" class="text" id="dueDate">
-                </td>
-            </tr>
+                <tr><td class="what">📎 파일 첨부 </td></tr>
+                <tr>
+                    <td>
+                        <input type="file" class="file">
+                    </td>
+                </tr>
 
-            <!--수행완료(마감일) 입력받기-->
-            <tr><td class="what">⏱️ 마감시간</td></tr>
-            <tr>
-                <td>
-                    <input type="time" class="text" id="dueDate">
-                </td>
-            </tr>
-
-            <!--과제 총점 입력받기 (선택사항)-->
-            <tr><td class="what">🅰️➕ 과제 총점</td></tr>
-            <tr>
-                <td>
-                    <input type="number" placeholder="총점" class="text" id="totalScore">
-                </td>
-            </tr>
-
-            <tr><td class="what">📎 파일 첨부 </td></tr>
-            <tr>
-                <td>
-                    <input type="file" class="file">
-                </td>
-            </tr>
-
-            <!--등록 버튼-->
-            <tr>
-                <td>
-                    <input type="submit" value="등록하기" class="btn" onclick="validateTask()">
-                </td>
-            </tr>
-           
-        </table>
+                <!-- 확인 및 취소 버튼 -->
+                <tr>
+                    <td>
+                        <input type="submit" value="확인" class="btn">
+                        <input type="button" value="취소" class="btn" onclick="cancelEdit()">
+                    </td>
+                </tr>
+            </table>
         </form>
     </div>
 
-        <!-- JavaScript: 입력 유효성 검사 -->
-        <script>
-            function validateTask() {
-                var category = document.getElementById("category").value;
-                var subject = document.getElementById("subject").value;
-                var professor = document.getElementById("professor").value;
-                var task = document.getElementById("task").value;
-                var startDate = document.getElementById("startDate").value;
-                var dueDate = document.getElementById("dueDate").value;
+    <!-- 자바스크립트: 입력 유효성 검사 및 버튼 동작 -->
+    <script>
+        function validateTask() {
+            var subject = document.getElementById("subject").value;
+            var professor = document.getElementById("professor").value;
+            var title = document.getElementById("title").value;
+            var task = document.getElementById("task").value;
+            var dueDate = document.getElementById("dueDate").value;
+            var dueTime = document.getElementById("dueTime").value;
 
-                if (category === "-----") {
-                    alert("카테고리를 선택하세요.");
-                    return false;
-                } else if (subject === "") {
-                    alert("과목을 입력하세요.");
-                    return false;
-                } else if (professor === "") {
-                    alert("교수님 성함을 입력하세요.");
-                    return false;
-                } else if (task === "") {
-                    alert("세부 할일을 입력하세요.");
-                    return false;
-                } else if (startDate === "") {
-                    alert("시작 날짜를 입력하세요.");
-                    return false;
-                } else if (dueDate === "") {
-                    alert("마감일을 입력하세요.");
-                    return false;
-                } else {
-                    alert("성공적으로 투두리스트가 등록되었습니다.");
-                    return true;
-                }
+            if (subject === "-----") {
+                alert("과목을 선택하세요.");
+                return false;
+            } else if (professor === "") {
+                alert("교수님 성함을 입력하세요.");
+                return false;
+            } else if (title === "") {
+                alert("제목을 입력하세요.");
+                return false;
+            } else if (task === "") {
+                alert("세부 할일을 입력하세요.");
+                return false;
+            } else if (dueDate === "") {
+                alert("마감일을 입력하세요.");
+                return false;
+            } else if (dueTime === "") {
+                alert("마감시간을 입력하세요.");
+                return false;
+            } else {
+                return confirm("게시물을 수정할까요?");
             }
-        </script>
-    </form>
+        }
+
+        function cancelEdit() {
+            if (confirm("수정을 취소하고 목록으로 돌아가시겠습니까?")) {
+                location.href = 'index.htm';
+            }
+        }
+    </script>
+
 </body>
 </html>
