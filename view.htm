@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoView</title>
+    <link rel="stylesheet" type="text/css" href="my.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet"></head>
+
+</head>
+<body>
+    
+    <!-- 상단에 위치한 이모지 버튼 -->
+    <div class="action-btns">
+        <button onclick="location.href='edit.html'">✏️ 수정</button> 
+        <button onclick="confirmDelete()">🗑️ 삭제</button> 
+        <button onclick="location.href='index.htm'">📋 목록</button> 
+    </div>
+
+    <div class="task">
+        <p class="date">🗓️ 2024-09-28 ⏱️ 23:59</p>
+        <h3>🧑🏻‍💻 오픈소스 스튜디오</h3>
+        <p>👨🏻‍🏫 김세진 교수님</p>
+        <p>📚 과제</p>
+        <ul>
+            <li>✅ 5주차 HW 2-2</li>
+            <li>✅ 웹 배포</li>
+            <li>✅ 구글폼 작성</li>
+        </ul>
+    </div>
+
+    <!-- 자바스크립트 추가 -->
+    <script>
+        function confirmDelete() {
+            var result = confirm("게시물을 삭제할까요?");
+            if (result) {
+                alert("게시물이 삭제되었습니다.");
+                location.href = 'index.html'; // 삭제 후 목록 페이지로 이동
+            }
+        }
+    </script>
+
+</body>
+</html>

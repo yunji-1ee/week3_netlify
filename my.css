@@ -1,0 +1,269 @@
+table {
+    width: auto;
+    height: auto;
+    margin: auto;
+}
+
+.text {
+    width: 250px;
+    height: 32px;
+    font-size: 15px;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: rgb(233, 233, 233);
+    margin-bottom: 15px;
+}
+
+.textarea {
+    width: 250px;
+    height: 100px;
+    font-size: 15px;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: rgb(233, 233, 233);
+    resize: none; 
+    margin-bottom: 15px;
+}
+.radio {
+    margin-bottom: 15px;
+    font-family: "IBM Plex Sans KR", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.what {
+    font-family: "IBM Plex Sans KR", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.file {
+    font-family: "IBM Plex Sans KR", sans-serif;
+    font-weight: 400;
+
+}
+select {
+    width: auto;
+    height: 32px;
+    font-size: 15px;
+    border: 1;
+    border-color: lightgray;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+}
+/* 등록하기 버튼 */
+.btn {   
+    margin-top: 18px;
+    width: 262px;
+    height: 32px;
+    font-size: 15px;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: #d2e8d2;
+
+}
+
+.btn:hover{
+    background-color: #83b783;
+}
+
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #f3f3f3;
+}
+
+h1 {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color : #4a8c4a;
+
+}
+.add-task {
+    display: flex;  
+    justify-content: center; 
+    margin-bottom: 20px;
+}
+
+.add-task-btn {
+    flex: 1 1 calc(100% - 20px); 
+    padding: 10px;
+    background-color: #d2e8d2;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.add-task-btn:hover { 
+    background-color: #83b783;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 800px) {
+    .add-task-btn {
+        flex: 1 1 calc(50% - 20px);  /* 600px~800px 화면에서 버튼을 50% 너비로 설정 */
+    }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1200px) {
+    .add-task-btn {
+        flex: 1 1 calc(33.33% - 20px);  /* 800px~1200px 화면에서 버튼을 33.33% 너비로 설정 */
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+    .add-task-btn {
+        flex: 1 1 calc(33.33% - 20px);  /* 1200px~1600px 화면에서 버튼을 33.33% 너비로 설정 */
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .add-task-btn {
+        flex: 1 1 calc(24% - 20px);  /* 1600px 이상 화면에서 버튼을 24% 너비로 설정 */
+    }
+}
+
+
+.add-task-btn span {
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+
+h2 {
+    color: #000000;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.tasks {
+    display: flex;
+    flex-wrap: wrap;  
+    gap: 10px;  
+    
+
+}
+
+.task {
+    font-family: "IBM Plex Sans KR", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 18px;
+    margin-bottom: 20px;
+
+    background-color: #edf8ed;
+    border: 1px solid #cde8c1;
+    padding: 30px;
+    border-radius: 4px;
+    flex: 1 1 calc(100% - 20px);  /* 기본적으로 한 줄에 한 개 */
+}
+
+.task ul {
+    list-style-type: none;  
+    padding-left: 0;  
+}
+
+@media only screen and (min-width: 600px) and (max-width: 800px) {
+    .task {
+        flex: 1 1 calc(50% - 20px);  /* 2열로 구성: 너비를 50% - 간격으로 설정 */
+    }
+}
+@media only screen and (min-width: 800px) and (max-width: 1200px) {
+    .task {
+        flex: 1 1 calc(33.33% - 20px);  
+    }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+    .task {
+        flex: 1 1 calc(33.33% - 20px);  
+    }
+}
+@media only screen and (min-width: 1600px) {
+    .task {
+        flex: 1 1 calc(24% - 20px);  
+    }
+}
+
+h3 {
+    margin-bottom: 5px;
+    color: #4a8c4a;
+}
+
+.date {
+    color: #a0a0a0;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+.time {
+    color: #a0a0a0;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+.task-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.edit-btn, .delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;  
+    margin: 50px auto;  
+    padding: 20px 30px;  
+    background-color: #ffffff;
+    border: 5px solid #b5dcb5;
+    border-radius: 8px;
+}
+
+
+.action-btns {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.action-btns button { 
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding-top: 50px;
+    margin-left: 10px;
+    
+}
+
+.action-btns button:hover {
+    transform: scale(1.2); 
+}
+
+.task {
+    margin-top: 50px; 
+}
